@@ -1,1 +1,58 @@
-# mdbook-svgbob2
+# Alternative svgbob preprocessor for mdbook
+A preprocessor for [mdbook](https://github.com/rust-lang/mdBook) to convert `svgbob` codeblocks into nice SVG images using [svgbob](https://github.com/ivanceras/svgbob).
+
+This crate serves as an alternative to [mdbook-svgbob](https://github.com/fzzr-/mdbook-svgbob) which was a big inspiration while writing the code for this crate.
+
+The reason why I created this was that the original uses outdated dependencies and seems to break tables some reason, and it requires the source to have Unix line endings as it breaks with Windows line endings. I also wanted to learn how to write mdbook preprocessors and had a usecase for an updated svgbob integration.
+
+## Installation
+Install with cargo:
+```sh
+cargo install mdbook-svgbob2
+```
+
+Or to install from the git mirror:
+```sh
+cargo install --git https://github.com/Treeniks/mdbook-svgbob2.git
+```
+
+## Usage
+Add this to your cargo.toml:
+```toml
+[preprocessor.svgbob2]
+```
+
+Optionally add any arguments for the [svgbob settings](https://docs.rs/svgbob/0.6.2/svgbob/buffer/fragment/struct.Settings.html):
+```toml
+[preprocessor.svgbob2]
+font_size = "14"
+font_family = "monospace"
+fill_color = "black"
+background = "transparent"
+stroke_color = "var(--fg)" # variable from the mdbook css files
+stroke_width = "2.0"
+scale = "8.0"
+enhance_circuitries = "true"
+include_backdrop = "true"
+include_styles = "true"
+include_defs = "true"
+merge_line_with_shapes = "false"
+```
+The above are the default settings. Most of them are the svgbob defaults, with the exception of `background` and `stroke_color` which I have changed to better fit mdbook.
+
+Then simply include `svgbob` codeblocks in some chapter:
+````md
+```svgbob
+       .---.
+      /-o-/--
+   .-/ / /->
+  ( *  \/
+   '-.  \
+      \ /
+       '
+```
+````
+and it should display as a nicely rendered svg when rendered with mdbook.
+
+## TODO
+There is currently no tests implemented.
