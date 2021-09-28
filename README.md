@@ -63,4 +63,6 @@ Then simply include `svgbob` codeblocks in some chapter:
 and it should display as a nicely rendered svg when rendered with mdbook.
 
 ## TODO
-There is currently no tests implemented.
+* there are currently no tests implemented
+* 2 consecutive svgbob blocks will currently break the second one\
+  this is fixed by having anything else written between the two blocks
