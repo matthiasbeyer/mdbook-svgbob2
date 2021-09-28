@@ -1,7 +1,9 @@
 [package]
 name = "mdbook-svgbob2"
+description = "Alternative mdbook preprocessor for svgbob."
 version = "0.1.0"
 edition = "2018"
+authors = ["Thomas Lindae <thomas.lindae@in.tum.de>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
