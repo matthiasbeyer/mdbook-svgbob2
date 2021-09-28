@@ -43,7 +43,7 @@ include_defs = "true"
 merge_line_with_shapes = "false"
 
 # this is a non-svgbob custom setting
-font_color = var(--fg)
+font_color = "var(--fg)"
 ```
 The above are the default settings. Most of them are the svgbob defaults, with the exception of `background` and `stroke_color` which I have changed to better fit mdbook.\
 svgbob currently does not support changing the font color (although there are [feature requests](https://github.com/ivanceras/svgbob/issues/78) for this to be added), and because a pure black font color doesn't work well with different mdbook themes, I added the ability to change the font color.
