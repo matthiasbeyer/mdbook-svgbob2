@@ -1,7 +1,7 @@
 [package]
 name = "mdbook-svgbob2"
 description = "Alternative mdbook preprocessor for svgbob."
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Thomas Lindae <thomas.lindae@in.tum.de>"]
 edition = "2018"
 license = "MIT"

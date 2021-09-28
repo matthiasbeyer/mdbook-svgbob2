@@ -1,4 +1,8 @@
 # Alternative svgbob preprocessor for mdbook
+[![Crates.io](https://img.shields.io/crates/v/mdbook-svgbob2)](https://crates.io/crates/mdbook-svgbob2)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Treeniks/mdbook-svgbob2)](https://github.com/Treeniks/mdbook-svgbob2)
+[![License](https://img.shields.io/github/license/Treeniks/mdbook-svgbob2)](https://github.com/Treeniks/mdbook-svgbob2/blob/master/LICENSE)
+
 A preprocessor for [mdbook](https://github.com/rust-lang/mdBook) to convert `svgbob` codeblocks into nice SVG images using [svgbob](https://github.com/ivanceras/svgbob).
 
 This crate serves as an alternative to [mdbook-svgbob](https://github.com/fzzr-/mdbook-svgbob) which was a big inspiration while writing the code for this crate.
