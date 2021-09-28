@@ -36,6 +36,8 @@ impl Preprocessor for Bob {
             ..Default::default()
         };
 
+        let mut font_color = "var(--fg)".to_owned();
+
         if let Some(cfg) = ctx.config.get_preprocessor(self.name()) {
             cfg.iter().for_each(|(key, val)| match key.as_str() {
                 "font_size" => settings.font_size = val.clone().try_into().unwrap(),
@@ -52,6 +54,9 @@ impl Preprocessor for Bob {
                 "include_defs" => settings.include_defs = val.clone().try_into().unwrap(),
                 "merge_line_with_shapes" =>
                     settings.merge_line_with_shapes = val.clone().try_into().unwrap(),
+
+                // non-svgbob custom setting
+                "font_color" => font_color = val.clone().try_into().unwrap(),
 
                 _ => (), // this should not happen
             });
@@ -93,7 +98,9 @@ impl Preprocessor for Bob {
                                 true,
                             ) => {
                                 in_block = false;
-                                Some(Event::Html(create_svg_html(&diagram, &settings).into()))
+                                Some(Event::Html(
+                                    create_svg_html(&diagram, &settings, &font_color).into(),
+                                ))
                             }
                             // if nothing matches, change nothing
                             _ => Some(event),
@@ -119,10 +126,13 @@ impl Preprocessor for Bob {
     }
 }
 
-fn create_svg_html(s: &str, settings: &Settings) -> String {
+fn create_svg_html(s: &str, settings: &Settings, font_color: &str) -> String {
     let svg = svgbob::to_svg_with_settings(s, settings);
 
     // I am actually not sure why this has to be a pre tag
     // taken from https://github.com/badboy/mdbook-mermaid/blob/main/src/lib.rs
-    format!("<pre class=\"svgbob\">{}</pre>", svg)
+    format!(
+        "<pre class=\"svgbob\"><style>text{{fill:{}}}</style>{}</pre>",
+        font_color, svg
+    )
 }
