@@ -45,15 +45,13 @@ impl Preprocessor for Bob {
                 "stroke_color" => settings.stroke_color = val.clone().try_into().unwrap(),
                 "stroke_width" => settings.stroke_width = val.clone().try_into().unwrap(),
                 "scale" => settings.scale = val.clone().try_into().unwrap(),
-                "enhance_circuitries" => {
-                    settings.enhance_circuitries = val.clone().try_into().unwrap()
-                }
+                "enhance_circuitries" =>
+                    settings.enhance_circuitries = val.clone().try_into().unwrap(),
                 "include_backdrop" => settings.include_backdrop = val.clone().try_into().unwrap(),
                 "include_styles" => settings.include_styles = val.clone().try_into().unwrap(),
                 "include_defs" => settings.include_defs = val.clone().try_into().unwrap(),
-                "merge_line_with_shapes" => {
-                    settings.merge_line_with_shapes = val.clone().try_into().unwrap()
-                }
+                "merge_line_with_shapes" =>
+                    settings.merge_line_with_shapes = val.clone().try_into().unwrap(),
 
                 _ => (), // this should not happen
             });
