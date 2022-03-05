@@ -113,7 +113,7 @@ impl Preprocessor for Bob {
                 let mut buf = String::with_capacity(chapter.content.len() + 128);
 
                 // convert it back to markdown and replace the original chapter's content
-                cmark(events, &mut buf, None).unwrap();
+                cmark(events, &mut buf).unwrap();
                 chapter.content = buf;
             }
         });
