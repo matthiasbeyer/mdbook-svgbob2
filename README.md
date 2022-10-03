@@ -1,4 +1,4 @@
-# Alternative svgbob preprocessor for mdbook
+# svgbob preprocessor for mdbook
 
 [![Crates.io](https://img.shields.io/crates/v/mdbook-svgbob2)](https://crates.io/crates/mdbook-svgbob2)
 [![GitHub last commit](https://img.shields.io/github/last-commit/matthiasbeyer/mdbook-svgbob2)](https://github.com/matthiasbeyer/mdbook-svgbob2)
