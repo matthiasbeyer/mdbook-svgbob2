@@ -1,7 +1,7 @@
 # Alternative svgbob preprocessor for mdbook
 [![Crates.io](https://img.shields.io/crates/v/mdbook-svgbob2)](https://crates.io/crates/mdbook-svgbob2)
-[![GitHub last commit](https://img.shields.io/github/last-commit/Treeniks/mdbook-svgbob2)](https://github.com/Treeniks/mdbook-svgbob2)
-[![License](https://img.shields.io/github/license/Treeniks/mdbook-svgbob2)](https://github.com/Treeniks/mdbook-svgbob2/blob/master/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/matthiasbeyer/mdbook-svgbob2)](https://github.com/matthiasbeyer/mdbook-svgbob2)
+[![License](https://img.shields.io/github/license/matthiasbeyer/mdbook-svgbob2)](https://github.com/matthiasbeyer/mdbook-svgbob2/blob/master/LICENSE)
 
 A preprocessor for [mdbook](https://github.com/rust-lang/mdBook) to convert `svgbob` codeblocks into nice SVG images using [svgbob](https://github.com/ivanceras/svgbob).
 
@@ -17,7 +17,7 @@ cargo install mdbook-svgbob2
 
 Or to install from the git mirror:
 ```sh
-cargo install --git https://github.com/Treeniks/mdbook-svgbob2.git
+cargo install --git https://github.com/matthiasbeyer/mdbook-svgbob2.git
 ```
 
 ## Usage
