@@ -5,7 +5,7 @@ unlicensed = "deny"
 # List of explicitly allowed licenses
 # See https://spdx.org/licenses/ for list of possible licenses
 # [possible values: any SPDX 3.7 short identifier (+ optional exception)].
-allow = []
+allow = ["MPL-2.0"]
 
 # List of explicitly disallowed licenses
 # See https://spdx.org/licenses/ for list of possible licenses
