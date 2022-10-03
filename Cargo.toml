@@ -2,7 +2,7 @@
 name = "mdbook-svgbob2"
 description = "Alternative mdbook preprocessor for svgbob."
 version = "0.2.4"
-authors = ["Thomas Lindae <thomas.lindae@in.tum.de>"]
+authors = ["Thomas Lindae <thomas.lindae@in.tum.de>", "Matthias Beyer <mail@beyermatthias.de>"]
 edition = "2021"
 license = "MIT"
 repository = "https://github.com/Treeniks/mdbook-svgbob2"
