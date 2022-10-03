@@ -12,7 +12,7 @@ const AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
 const DESCRIPTION: &str = env!("CARGO_PKG_DESCRIPTION");
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 
-fn make_app() -> Command<'static> {
+fn make_app() -> Command {
     Command::new(NAME)
         .version(VERSION)
         .author(AUTHORS)
@@ -60,8 +60,11 @@ fn handle_preprocessing(pre: &dyn Preprocessor) -> Result<(), Error> {
 }
 
 fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
-    let renderer = sub_args.value_of("renderer").expect("Required argument");
-    let supported = pre.supports_renderer(renderer);
+    let renderer = sub_args
+        .get_one::<String>("renderer")
+        .map(ToString::to_string)
+        .expect("Required argument");
+    let supported = pre.supports_renderer(&renderer);
 
     // Signal whether the renderer is supported by exiting with 1 or 0.
     if supported {
