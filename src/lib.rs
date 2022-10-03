@@ -73,8 +73,8 @@ impl Preprocessor for Bob {
                 // of many different Text blocks, thus we need to buffer them in here
                 // see https://github.com/raphlinus/pulldown-cmark/issues/507
                 let mut diagram = String::new();
-                let events = Parser::new_ext(&chapter.content, Options::all())
-                    .map(|event| {
+                let events =
+                    Parser::new_ext(&chapter.content, Options::all()).filter_map(|event| {
                         match (&event, in_block) {
                             // check if we are entering a svgbob codeblock
                             (
@@ -107,9 +107,7 @@ impl Preprocessor for Bob {
                             // if nothing matches, change nothing
                             _ => Some(event),
                         }
-                    })
-                    // flatten to fullfill the Trait boundaries of the cmark call below
-                    .flatten();
+                    });
 
                 // create a buffer in which we can place the markdown
                 let mut buf = String::with_capacity(chapter.content.len() + 128);
