@@ -34,7 +34,7 @@ cargo install --git https://github.com/matthiasbeyer/mdbook-svgbob2.git
 
 ## Usage
 
-Add this to your cargo.toml:
+Add this to your book.toml:
 ```toml
 [preprocessor.svgbob2]
 ```
